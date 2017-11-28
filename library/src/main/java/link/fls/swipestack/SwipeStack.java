@@ -321,6 +321,14 @@ public class SwipeStack extends ViewGroup {
         if (mListener != null) mListener.onViewSwipedToRight(swipedPosition);
     }
 
+    public void onClick(){
+        mListener.onClick();
+    }
+
+    public void onLongClick(long duration){
+        mListener.onLongClick(duration);
+    }
+
     /**
      * Returns the current adapter position.
      *
@@ -449,6 +457,16 @@ public class SwipeStack extends ViewGroup {
          * Called when the last view has been dismissed.
          */
         void onStackEmpty();
+
+        /**
+         * Called when there is a click action.
+         */
+        void onClick();
+
+        /**
+         * Called when there is a long click action.
+         */
+        void onLongClick(long duration);
     }
 
     /**
