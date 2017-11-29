@@ -51,10 +51,10 @@ public class MainActivity extends AppCompatActivity implements SwipeStack.SwipeS
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mSwipeStack = (SwipeStack) findViewById(R.id.swipeStack);
-        mButtonLeft = (Button) findViewById(R.id.buttonSwipeLeft);
-        mButtonRight = (Button) findViewById(R.id.buttonSwipeRight);
-        mFab = (FloatingActionButton) findViewById(R.id.fabAdd);
+        mSwipeStack = findViewById(R.id.swipeStack);
+        mButtonLeft = findViewById(R.id.buttonSwipeLeft);
+        mButtonRight = findViewById(R.id.buttonSwipeRight);
+        mFab = findViewById(R.id.fabAdd);
 
         mButtonLeft.setOnClickListener(this);
         mButtonRight.setOnClickListener(this);
@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity implements SwipeStack.SwipeS
 
         private List<String> mData;
 
-        public SwipeStackAdapter(List<String> data) {
+        SwipeStackAdapter(List<String> data) {
             this.mData = data;
         }
 
@@ -169,7 +169,7 @@ public class MainActivity extends AppCompatActivity implements SwipeStack.SwipeS
                 convertView = getLayoutInflater().inflate(R.layout.card, parent, false);
             }
 
-            TextView textViewCard = (TextView) convertView.findViewById(R.id.textViewCard);
+            TextView textViewCard = convertView.findViewById(R.id.textViewCard);
             textViewCard.setText(mData.get(position));
 
             return convertView;

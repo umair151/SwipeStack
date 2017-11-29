@@ -1,8 +1,8 @@
 apply plugin: 'com.android.library'
 apply plugin: 'bintray-release'
 
-def final String VERSION_NAME = "0.3.0"
-def final int VERSION_CODE = 30
+final String VERSION_NAME = "0.3.0"
+final int VERSION_CODE = 30
 
 android {
     compileSdkVersion 27
