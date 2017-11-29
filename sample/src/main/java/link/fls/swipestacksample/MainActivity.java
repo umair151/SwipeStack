@@ -130,6 +130,16 @@ public class MainActivity extends AppCompatActivity implements SwipeStack.SwipeS
         Toast.makeText(this, R.string.stack_empty, Toast.LENGTH_SHORT).show();
     }
 
+    @Override
+    public void onClick() {
+
+    }
+
+    @Override
+    public void onLongClick(long duration) {
+
+    }
+
     public class SwipeStackAdapter extends BaseAdapter {
 
         private List<String> mData;
