@@ -33,11 +33,8 @@ public class SwipeHelper implements View.OnTouchListener {
     private final SwipeStack mSwipeStack;
     private View mObservedView;
     private boolean mListenForTouchEvents;
-    private float mDownX;
-    private float mDownY;
     private float mInitialX;
     private float mInitialY;
-    private int mPointerId;
     private float x1;
     private float y1;
     private float mRotateDegrees = SwipeStack.DEFAULT_SWIPE_ROTATION;
@@ -60,17 +57,12 @@ public class SwipeHelper implements View.OnTouchListener {
                 y1 = event.getY();
                 v.getParent().requestDisallowInterceptTouchEvent(true);
                 mSwipeStack.onSwipeStart();
-                mPointerId = event.getPointerId(0);
-                mDownX = event.getX(mPointerId);
-                mDownY = event.getY(mPointerId);
+
                 return true;
 
             case MotionEvent.ACTION_MOVE:
-                int pointerIndex = event.findPointerIndex(mPointerId);
-                if (pointerIndex < 0) return false;
-
-                float dx = event.getX(pointerIndex) - mDownX;
-                float dy = event.getY(pointerIndex) - mDownY;
+                float dx = event.getX() - x1;
+                float dy = event.getY() - y1;
 
                 float newX = mObservedView.getX() + dx;
                 float newY = mObservedView.getY() + dy;
