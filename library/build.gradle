@@ -1,8 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'bintray-release'
-
-final String VERSION_NAME = "0.3.0"
-final int VERSION_CODE = 30
 
 android {
     compileSdkVersion 27
@@ -11,8 +7,6 @@ android {
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 27
-        versionCode VERSION_CODE
-        versionName VERSION_NAME
     }
     buildTypes {
         release {
@@ -23,16 +17,9 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:27.0.2'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.android.support:appcompat-v7:27.0.2'
 }
 
-publish {
-    userOrg = 'flschweiger'
-    groupId = 'link.fls'
-    artifactId = 'swipestack'
-    publishVersion = VERSION_NAME
-    desc = 'A swipeable view stack for Android.'
-    website = 'https://github.com/flschweiger/SwipeStack'
-}
+apply from: 'publish.gradle'
