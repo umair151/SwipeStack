@@ -17,14 +17,11 @@
 package link.fls.swipestack;
 
 import android.animation.Animator;
-import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.animation.OvershootInterpolator;
-
-import java.util.Calendar;
 
 import link.fls.swipestack.util.AnimationUtils;
 
