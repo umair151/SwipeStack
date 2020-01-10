@@ -22,7 +22,7 @@ import android.database.DataSetObserver;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -312,7 +312,7 @@ public class SwipeStack extends ViewGroup {
     public void onViewSwipedToLeft() {
         int swipedPosition = getCurrentPosition();
         removeTopView();
-        if (mListener != null) mListener.onViewSwipedToRight(swipedPosition);
+        if (mListener != null) mListener.onViewSwipedToLeft(swipedPosition);
     }
 
     public void onViewSwipedToRight() {
