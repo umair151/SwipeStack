@@ -44,7 +44,6 @@ public class SwipeHelper implements View.OnTouchListener {
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
-        Log.d("EVENT",event+"");
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 if(!mListenForTouchEvents || !mSwipeStack.isEnabled()) {
